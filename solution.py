@@ -35,6 +35,9 @@ class LogData:
         print("IP Address: " + str(self.ip_address))
         print("Country Code: " + str(self.country_code))
         print("Timestamp: " + str(self.timestamp))
+    
+    def __eq__(self, other):
+        return isinstance(other, LogData) and self.ip_address == other.ip_address and self.country_code == other.country_code and self.timestamp == other.timestamp and self.http_request == other.http_request and self.http_status_code == other.http_status_code and self.response_size == other.response_size and self.device_details == other.device_details and self.response_time == other.response_time
 
 class WindowMetrics:
     """
